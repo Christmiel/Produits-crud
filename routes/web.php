@@ -24,5 +24,15 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
+Route::get('produits/deleted', [ProduitController::class, 'index_deleted']);
+
+Route::delete('produits/hard_deleted/{id}', [ProduitController::class, 'hardDeleted']);
+
+Route::get('produits/restore/{id}','App\Http\Controllers\ProduitController@restore');
+
+
 Route::resource('produits','App\Http\Controllers\ProduitController');
+
+Route::get('users','App\Http\Controllers\UserController@index');
+
 

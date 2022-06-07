@@ -1,15 +1,11 @@
 @extends('produits.layout')
 @section('content')
-<div class="row">
-    <div class="col-lg-12 margin-tb">
-    <div class="pull-left">
-        <h2>Edit product</h2>
-</div>
-<div class="pull-right">
-    <a class="btn btn-primary" href="{{route('produits.index')}}"> Back</a>
-</div>
-</div>
-</div>
+<div class="col-lg-12 margin-tb btn btn-primary">
+        <div class="pull-right">
+        <h2> Edit Products</h2>  <br>
+        </div>
+ </div> <br><br><br>
+   
 
 @if($errors->any())
 <div class="alert alert-danger">

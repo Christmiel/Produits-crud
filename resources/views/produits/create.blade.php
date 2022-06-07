@@ -1,16 +1,12 @@
 @extends('produits.layout')
 
 @section('content')
-<div class="row">
-    <div class="col-lg-12 margin-tb">
-        <div class="pull-left">
-            <h2> Add new produit</h2>
-        </div>
+<div class="col-lg-12 margin-tb btn btn-success">
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{route('produits.index')}}"> Back</a>
+        <h2> Add a new Product</h2>  <br>
         </div>
-    </div> 
-</div> 
+ </div> <br><br><br>
+   
 
 @if($errors->any())
 <div class="alert alert-danger">
@@ -24,13 +20,14 @@
 </div>
 @endif
 
+
 <form action="{{route('produits.store')}}" method="POST">
     @csrf
 
     <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <strong>ProduitName:</strong>
+            <strong>Nom du produit:</strong>
             <input type="text" name="nom" class="form-control" placeholder="nom">
         </div>
     </div>
@@ -38,7 +35,17 @@
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Statut:</strong>
-            <input type="text" name="statut" class="form-control" placeholder="statut">
+
+            <select name="statut" id="pet-select">
+    <option value="">--Choisissez svp une option--</option>
+    <option value="Indisponible">Disponible</option>
+    <option value="Indisponible">Indisponible</option>
+  
+    </select>
+
+
+
+
         </div>
     </div>
 
